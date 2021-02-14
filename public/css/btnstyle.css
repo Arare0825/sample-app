@@ -1,0 +1,19 @@
+.today{
+    text-align: center;
+}
+
+.today h1{
+font-size: 35px;
+padding-top:15px ;
+}
+
+.home-btn{
+    margin-bottom:15px;
+ }
+
+ .search{
+     margin-bottom:15px;
+ }
+ #home-btn{
+     margin-right:10px ;
+ }
