@@ -96,5 +96,5 @@ require __DIR__.'/auth.php';
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
-Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+Route::get('login/github', 'Auth\LoginController@redirectToGithub');
+Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');

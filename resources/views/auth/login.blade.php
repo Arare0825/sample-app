@@ -47,8 +47,8 @@
                     <a href="/login/google" class="btn btn-secondary" role="button">
                         Google Login
                     </a>
-                    <a href="/login/facebook" class="btn btn-primary" role="button">
-                        facebook Login
+                    <a href="/login/github" class="btn btn-primary" role="button">
+                        github Login
                     </a>
 
                 </div>

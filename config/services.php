@@ -35,10 +35,10 @@ return [
         'client_secret' => 'vy3xfj-IeHSM6fcPlx9fOiYu',
         'redirect' => 'http://ec2-54-178-121-200.ap-northeast-1.compute.amazonaws.com/',
     ],    
-    'facebook' => [
-        'client_id' => '411393343422280',
-        'client_secret' => '9aa5b61ef71d4e9b7418130119dc1ee1',
-        'redirect' => 'http://54.178.121.200/',
+    'github' => [
+        'client_id' => '100647',
+        'client_secret' => ' Iv1.a95816c3a9aa616a',
+        'redirect' => 'http://ec2-54-178-121-200.ap-northeast-1.compute.amazonaws.com/',
     ],
 
 // http://localhost/login/facebook/callback

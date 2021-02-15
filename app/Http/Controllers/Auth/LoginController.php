@@ -77,27 +77,27 @@ class LoginController extends Controller
 
 
 
-//facebook認証
-public function redirectToFacebook()
+//github認証
+public function redirectToGithub()
 {
-    return Socialite::driver('facebook')->redirect();
+    return Socialite::driver('github')->redirect();
 }
 
-public function handleFacebookCallback()
+public function handleGithubkCallback()
 {
-    $fUser = Socialite::driver('facebook')->stateless()->user();
+    $fUser = Socialite::driver('github')->stateless()->user();
     // email が合致するユーザーを取得
     $user = User::where('email', $fUser->email)->first();
     // 見つからなければ新しくユーザーを作成
     if ($user == null) {
-        $user = $this->createUserByGoogle($fUser);
+        $user = $this->createUserByGithub($fUser);
     }
     // ログイン処理
     \Auth::login($user, true);
     return redirect('/');
 }
 
-public function createUserByFacebook($fUser)
+public function createUserByGithub($fUser)
 {
     $user = User::create([
         'name'     => $fUser->name,
