@@ -97,4 +97,4 @@ Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 Route::get('login/github', 'Auth\LoginController@redirectToGithub');
-Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');
+// Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');
