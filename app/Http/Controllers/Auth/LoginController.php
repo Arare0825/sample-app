@@ -100,8 +100,8 @@ public function handleGithubCallback()
 public function createUserByGithub($fUser)
 {
     $user = User::create([
-        'name'     => $fUser->name,
-        'email'    => $fUser->email,
+        'name'     => $fUser->name->nullable(),
+        'email'    => $fUser->email->nullable(),
         'password' => \Hash::make(uniqid()),
     ]);
     return $user;
