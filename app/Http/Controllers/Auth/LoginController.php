@@ -83,7 +83,7 @@ public function redirectToGithub()
     return Socialite::driver('github')->redirect();
 }
 
-public function handleGithubkCallback()
+public function handleGithubCallback()
 {
     $fUser = Socialite::driver('github')->stateless()->user();
     // email が合致するユーザーを取得
