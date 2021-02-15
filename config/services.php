@@ -36,8 +36,8 @@ return [
         'redirect' => 'http://ec2-54-178-121-200.ap-northeast-1.compute.amazonaws.com/',
     ],    
     'facebook' => [
-        'client_id' => '122926563060494',
-        'client_secret' => '9fb7d0f966a8c027c478b56e21738032',
+        'client_id' => '411393343422280',
+        'client_secret' => '9aa5b61ef71d4e9b7418130119dc1ee1',
         'redirect' => 'http://54.178.121.200/',
     ],
 
