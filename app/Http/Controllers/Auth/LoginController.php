@@ -83,45 +83,30 @@ public function redirectToGithub()
     return Socialite::driver('github')->redirect();
 }
 
-// public function handleGithubCallback()
-// {
-//     $fUser = Socialite::driver('github')->stateless()->user();
-//     // email が合致するユーザーを取得
-//     $user = User::where('email', $fUser->email)->first();
-//     // 見つからなければ新しくユーザーを作成
-//     if ($user == null) {
-//         $user = $this->createUserByGithub($fUser);
-//     }
-//     // ログイン処理
-//     \Auth::login($user, true);
-//     return redirect('/');
-// }
+public function handleGithubCallback()
+{
+    $fUser = Socialite::driver('github')->stateless()->user();
+    // email が合致するユーザーを取得
+    $user = User::where('email', $fUser->email)->first();
+    // 見つからなければ新しくユーザーを作成
+    if ($user == null) {
+        $user = $this->createUserByGithub($fUser);
+    }
+    // ログイン処理
+    \Auth::login($user, true);
+    return redirect('/');
+}
 
-// public function createUserByGithub($fUser)
-// {
-//     $user = User::create([
-//         'name'     => $fUser->name,
-//         'email'    => $fUser->email,
-//         'password' => \Hash::make(uniqid()),
-//     ]);
-//     return $user;
-// }
+public function createUserByGithub($fUser)
+{
+    $user = User::create([
+        'name'     => $fUser->name->nullable(),
+        'email'    => $fUser->email->nullable(),
+        'password' => \Hash::make(uniqid()),
+    ]);
+    return $user;
+}
 
-// public function signin()
-//     {
-//         return view('/');
-//     }
-
-//     public function login()
-//     {
-//         return Socialite::driver('facebook')->redirect('/');
-//     }
-
-//     public function callback()
-//     {
-//         $user = Socialite::driver('facebook')->user();
-//         dd($user);
-//     }
 
 }
 
