@@ -97,15 +97,15 @@ public function handleGithubCallback()
     return redirect('/');
 }
 
-public function createUserByGithub($fUser)
-{
-    $user = User::create([
-        'name'     => $fUser->name,
-        'email'    => $fUser->email,
-        'password' => \Hash::make(uniqid()),
-    ]);
-    return $user;
-}
+// public function createUserByGithub($fUser)
+// {
+//     $user = User::create([
+//         'name'     => $fUser->name,
+//         'email'    => $fUser->email,
+//         'password' => \Hash::make(uniqid()),
+//     ]);
+//     return $user;
+// }
 
 // public function signin()
 //     {
