@@ -36,8 +36,8 @@ return [
         'redirect' => 'http://ec2-54-178-121-200.ap-northeast-1.compute.amazonaws.com/login/google/callback',
     ],    
     'github' => [
-        'client_id' => '100647',
-        'client_secret' => ' Iv1.a95816c3a9aa616a',
+        'client_id' => 'Iv1.a95816c3a9aa616a',
+        'client_secret' => '7812d03f7098eeaf42f5c58d8a2214aada2e1b95',
         'redirect' => 'http://ec2-54-178-121-200.ap-northeast-1.compute.amazonaws.com/login/github/callback',
     ],
 
