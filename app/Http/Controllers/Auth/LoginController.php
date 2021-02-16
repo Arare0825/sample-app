@@ -120,7 +120,7 @@ public function redirectToGithub()
 
       if ($user) {
           Auth::login($user);
-          return redirect('/home');
+          return redirect('/');
       } else {
           $user = User::create([
               'name' => $socialUser->getNickname(),
@@ -128,7 +128,7 @@ public function redirectToGithub()
               'password' => Hash::make($socialUser->getNickname()),  // 例としての記述なので、マネしないように
           ]);
           Auth::login($user);
-          return redirect('/home');
+          return redirect('/');
       }
     }
 }
