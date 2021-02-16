@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // use Laravel\Socialite\Facades\Socialite;
 use App\Models\User; 
 use Socialite;
-use Hush;
+use Hash;
 
 class LoginController extends Controller
 {
