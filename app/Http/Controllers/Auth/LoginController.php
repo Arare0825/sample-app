@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // use Laravel\Socialite\Facades\Socialite;
 use App\Models\User; 
 use Socialite;
+use Hush;
 
 class LoginController extends Controller
 {
@@ -105,17 +106,34 @@ class LoginController extends Controller
 //         'password' => \Hash::make(uniqid()),
 //     ]);
 //     return $user;
-// }
 
-public function redirectToprovider(){
-    return Socialite::driver('github')->redirect();
+public function redirectToGithub()
+  {
+       return Socialite::driver('github')->redirect();
+  }
+
+  public function handleGithubCallback()
+  {
+      $socialUser = Socialite::driver('github')->stateless()->user();
+      $user = User::where([ 'email' => $socialUser->getEmail() ])->first();
+
+      if ($user) {
+          Auth::login($user);
+          return redirect('/home');
+      } else {
+          $user = User::create([
+              'name' => $socialUser->getNickname(),
+              'email' => $socialUser->getEmail(),
+              'password' => Hash::make($socialUser->getNickname()),  // 例としての記述なので、マネしないように
+          ]);
+          Auth::login($user);
+          return redirect('/home');
+      }
+    }
 }
 
-public function handleProviderCallback(){
-    $user = Socialite::driver('github')->user();
-}
 
-}
+
 
 
 
