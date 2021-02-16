@@ -46,18 +46,22 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <!-- <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('登録済み方はこちら') }}
-                </a>
+                </a> -->
 
                 <x-button class="ml-4">
-                    {{ __('新規作成') }}
+                    {{ __('作成') }}
                 </x-button>
-                    <a href="/login/google" class="btn btn-secondary btn-sm" role="button">
+                    <a href="/login/google" class="ml-4 btn btn-primary btn-sm" role="button">
+                    <i class="fab fa-google">
                         Google Login
+                        </i>
                     </a>
-                    <a href="/login/github" class="btn btn-primary btn-sm" role="button">
+                    <a href="/login/github" class="ml-4 btn btn-secondary btn-sm" role="button">
+                    <i class="fab fa-github">
                         github Login
+                        </i>
                     </a>
 
             </div>

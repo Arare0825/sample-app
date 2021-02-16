@@ -43,14 +43,18 @@
 
                 <x-button class="ml-4">
                     {{ __('ログイン') }}
-                </x-button>
-                    <a href="/login/google" class="btn btn-secondary" role="button">
+                    </x-button>
+                    <a href="/login/google" class="ml-4 btn btn-primary" role="button">
+                    <i class="fab fa-google">
                         Google Login
+                        </i>
                     </a>
-                    <a href="/login/github" class="btn btn-primary" role="button">
+                    <a href="/login/github" class="ml-4 btn btn-secondary" role="button">
+                    <i class="fab fa-github">
                         github Login
+                        </i>
                     </a>
-
+                  
                 </div>
         </form>
     </x-auth-card>
